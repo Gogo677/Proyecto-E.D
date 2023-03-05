@@ -1,0 +1,162 @@
+----------------------------------------------Árboles--------------------------
+Los árboles son estructuras de datos homogéneas, organizadas, que implican rapidez en su manipulación.
+Las aplicaciones de esta estructura se encuentran en diversos campos de la computación:
+? Algorítmica: como son los métodos de clasificación y búsqueda.
+? Los compiladores: en los árboles sintácticos que expresan las producciones posibles de un
+lenguaje.
+? Inteligencia artificial: árboles de juegos, árboles de decisiones.
+? Heurística: árboles que representas todas las posibles soluciones.
+Entre otras. Las estructuras de tipo árbol se usan principalmente para representar datos en una elación
+jerárquica entre sus elementos, como lo son los árboles genealógicos.
+Los árboles son estructuras dinámicas de datos no lineales, cuya estructura puede cambiar durante la
+ejecución del programa y cada elemento del árbol puede tener varias ramificaciones.
+Una estructura de árbol con tipo de base T es un conjunto de uno o más nodos, en el que existe un
+nodo especial llamado nodo raíz del árbol, los demás nodos son particiones en subconjuntos disjuntos
+T1, T2, …,Tn, donde n=0, cada uno de los cuales es un árbol. Cada Ti, con 1= i = n, es llamado subárbol
+de la raíz. Desde el punto de vista de teoría de gráficas un árbol se define de la siguiente manera.
+Un árbol es una gráfica G(A, R), en donde A representa los nodos y R representa a los arcos,
+en la que:
+1. El número de nodos es igual al número de arcos +1
+|A|= |R| +1
+2. Todos los nodos son de grado interno > 1, excepto la raíz que puede ser de grado 0.
+3. Es una gráfica no dirigida, es decir no tiene dirección en sus arcos.
+4. No hay ciclos
+5. Cualquier trayectoria es simple, es decir un recorrido no pasa por el mismo nodo dos
+veces o más. Una trayectoria se define como la secuencia de líneas y nodos que
+existen entre un punto inicial y otro final.
+6. Entre cualquier par de nodos sólo existe una trayectoria.
+7. Cualquier arco es un arco de desconexión, es decir si se elimina un arco queda aislado
+del árbol.
+
+--> Clasificación, operaciones de inserción, extracción, búsqueda e insercción <--
+Los árboles se clasifican en binarios de grado dos y multicaminos de grado superior a dos. Las
+operaciones de un árbol en general son buscar, insertar y extraer un ítem. El Recorrido del árbol es
+diferente con respecto al tipo de árbol, es decir, en el caso de árbol binario regularmente se visitan los
+subárboles: izquierdo, derecho y la raíz, el orden puede diferir; mientras que, en los árboles multicamino el
+recorrido puede ser en profundidad o en anchura.
+Entre otras operaciones sobre árboles se encuentran: Comprobar si un árbol está vacío, calcular el número
+de nodos, comprobar si el nodo es hoja, calcular la altura de un nodo y calcular la altura de un árbol. Para
+buscar un ítem en un árbol binario se utiliza un procedimiento recursivo.
+Algoritmo:Datos de inicio: Se parte del nodo Raíz. Se definen tres punteros: padre = NULL, otro nodo
+= Raíz y auxiliar que apunta al padre del nodo raíz actual.
+Paso 1: Si nodo=NULL, se detecta que el árbol no tiene descendientes, por lo tanto el ítem
+no está en el árbol, el valor de retorno es 0, el puntero padre apunta al último nodo
+visitado y se termina la búsqueda, ir al Paso5.
+Paso 2: Si nodo raíz es igual al ítem que se busca, en caso afirmativo el ítem se encontró en
+el árbol, el valor de retorno es igual a 1, ir al Paso5.
+Paso 3: Si el valor del nodo raíz > ítem buscado, se continúa la búsqueda en el árbol
+izquierdo, auxiliar=padre, padre=nodo, nodo=nodo->izquierdo, a hora nodo apunta a
+la raíz del subárbol izquierdo, regresar al Paso1.
+Paso 4: Si el valor del nodo raíz < ítem buscado, se continúa la búsqueda en el árbol
+derecho, auxiliar=padre, padre=nodo, nodo=nodo->derecho, a hora nodo apunta a
+la raíz del subárbol derecho, regresar al Paso1.
+Paso 5: Fin del proceso.
+
+--> Árboles binarios <--
+Un árbol de grado 2 es un árbol binario, que se define como un conjunto de nodos que, bien está vacío o
+está formado por una raíz con dos árboles binarios disjuntos, denominados árbol izquierdo y derecho de la
+raíz, en otras palabras, puede tener 0, 1 o 2 subárboles. 
+El acceso a los a los nodos puede ser
+Recorrido prefijo: Que consiste en comenzar en la raíz, se sigue por el subárbol izquierdo y
+luego por el derecho.
+Recorrido infijo: Se comienza con el subárbol izquierdo, luego la raíz y finalmente se
+recorre el sub árbol derecho.
+Recorrido posfijo: Se comienza por el subárbol izquierdo, en seguida se visita el subárbol
+derecho y finalmente se visita la raíz.
+Operaciones en un árbol binario
+? Buscar un elemento.
+? Insertar un elemento.
+? Borrar un elemento.
+? Movimientos a través del árbol:
+? Izquierda.
+? Derecha.
+? Raíz.
+? Información:
+? Comprobar si un árbol está vacío.
+? Calcular el número de nodos.
+? Comprobar si el nodo es hoja.
+? Calcular la altura de un nodo.
+? Calcular la altura de un árbol.
+Para buscar un elemento:
+Partiendo siempre del nodo raíz, el modo de buscar un elemento se define de forma recursiva.
+? Si el árbol está vacío, terminamos la búsqueda: el elemento no está en el árbol.
+? Si el valor del nodo raíz es igual que el del elemento que buscamos, terminamos
+la búsqueda con éxito.
+? Si el valor del nodo raíz es mayor que el elemento que buscamos, continuaremos
+la búsqueda en el árbol izquierdo.
+? Si el valor del nodo raíz es menor que el elemento que buscamos, continuaremos
+la búsqueda en el árbol derecho.
+El valor de retorno de una función de búsqueda en un ABB puede ser un puntero al nodo
+encontrado, o NULL, si no se ha encontrado.Insertar un elemento:
+Para insertar un elemento nos basamos en el algoritmo de búsqueda. Si el elemento está en el árbol
+no lo insertaremos. Si no lo está, se insertará a continuación del último nodo visitado.
+Se necesita un puntero auxiliar para conservar una referencia al padre del nodo raíz actual. El valor
+inicial para ese puntero es NULL.
+? Padre = NULL
+? nodo = Raíz
+? Bucle: mientras actual no sea un árbol vacío o hasta que se encuentre el
+elemento.
+?Si el valor del nodo raíz es mayor que el elemento que buscamos,
+continuaremos la búsqueda en el árbol izquierdo: Padre=nodo,
+nodo=nodo->izquierdo.
+?Si el valor del nodo raíz es menor que el elemento buscado, se
+continúa la búsqueda en el árbol derecho: Padre=nodo,
+nodo=nodo->derecho.
+? Si nodo no es NULL, el elemento está en el árbol, por lo tanto, se sale.
+? Si Padre es NULL, el árbol estaba vacío, por lo tanto, el nuevo árbol sólo
+contendrá el nuevo elemento, que será la raíz del árbol.
+? Si el elemento es menor que el Padre, entonces insertamos el nuevo elemento
+como un nuevo árbol izquierdo de Padre.
+? Si el elemento es mayor que el Padre, entonces insertamos el nuevo elemento
+como un nuevo árbol derecho de Padre.
+Este modo de actuar asegura que el árbol sigue siendo árbol binario.
+Borrar un nodo de árbol binario:
+Para borrar un elemento también es necesario basarse en el algoritmo de búsqueda. Si el elemento
+no está en el árbol no es posible borrarlo. Si está, hay dos casos posibles:
+1. Se trata de un nodo hoja: en ese caso lo borraremos directamente.
+2. Se trata de un nodo rama: en ese caso no podemos eliminarlo, puesto que se perderían
+todos los elementos del árbol de que el nodo actual es padre. En su lugar buscamos el
+nodo más a la izquierda del subárbol derecho, o el más a la derecha del subárbol izquierdo
+e intercambiamos sus valores. En seguida se elimina el nodo hoja.
+Se necesita un puntero auxiliar para conservar una referencia al padre del nodo raíz actual. El valor
+inicial para ese puntero es NULL.
+? Padre = NULL
+? Si el árbol está vacío: el elemento no está en el árbol, por lo tanto salimos sin
+eliminar ningún elemento.
+? (1) Si el valor del nodo raíz es igual que el del elemento que buscamos, estamos
+ante uno de los siguientes casos:
+? El nodo raíz es un nodo hoja:
+?Si 'Padre' es NULL, el nodo raíz es el único del árbol, por lo tanto el puntero al árbol
+debe ser NULL.
+?Si raíz es la rama derecha de 'Padre', hacemos que esa rama apunte a NULL.
+?Si raíz es la rama izquierda de 'Padre', hacemos que esa rama apunte a NULL.
+?Eliminamos el nodo, y salimos.
+? El nodo no es un nodo hoja:
+?Buscamos el 'nodo' más a la izquierda del árbol derecho de raíz o el más a la
+derecha del árbol izquierdo. Hay que tener en cuenta que puede que sólo exista
+uno de esos árboles. Al mismo tiempo, actualizamos 'Padre' para que apunte al
+padre de 'nodo'.
+? Intercambiamos los elementos de los nodos raíz y 'nodo'.
+?Borramos el nodo 'nodo'. Esto significa volver a (1), ya que puede suceder que
+'nodo' no sea un nodo hoja.
+? Si el valor del nodo raíz es mayor que el elemento que buscamos, continuaremos la
+búsqueda en el árbol izquierdo.
+? Si el valor del nodo raíz es menor que el elemento que buscamos, continuaremos la
+búsqueda en el árbol derecho.
+
+--> Árboles perfectamente equilibrados <--
+Un árbol está perfectamente equilibrado si su equilibrio es cero y sus subárboles son también
+perfectamente equilibrados.Dado que las dos situaciones anteriores, no se presenta frecuentemente, se utiliza una definición
+alternativa que dice: un árbol binario está balanceado si las alturas de sus subárboles difieren en no
+más de uno y sus subárboles son también balanceados,
+
+-->Árboles balanceados(árboles AVl) <--
+El árbol AVL fue presentado por Adelson-Velskii y Landis, en la publicación del artículo titulado: "An
+algorithm for the organization of information" ("Un algoritmo para la organización de la información"),
+en 1962.
+Los árboles AVL tienen la característica de que la altura de la rama izquierda difiere en no más de
+una unidad de la altura de la rama derecha o viceversa. Gracias a esta forma de balance, el tiempo
+de búsqueda es estos árboles es O(log2n) (Nyhoff & Leestma, 1992). El factor de balance puede ser
+almacenado directamente en cada nodo o ser calculado a partir de las alturas de los subárboles.
+Si al realizar una operación de inserción o borrado se rompe la condición de balance, se debe
+realizar una serie de rotaciones de los nodos para que se mantenga el equilibrio.

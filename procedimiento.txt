@@ -1,0 +1,4 @@
+1.- Dar la explición o parte teórica de la estructura de datos
+
+2.- Generar los codigos para tipo de dato entero,caracter y flotante
+

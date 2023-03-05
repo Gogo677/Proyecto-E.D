@@ -1,0 +1,5 @@
+Ordenación por intercambio directo (burbuja)
+
+A este método se le conoce como método de la burbuja y consiste en hacer repetidas pasadas
+sobre el arreglo, moviendo en cada una el elemento de clave mínima hasta el extremo
+izquierdo del arreglo.

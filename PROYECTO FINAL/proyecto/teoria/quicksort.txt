@@ -1,0 +1,15 @@
+Ordenación por partición (Quicksort)
+
+Este método también es conocido como método rápido (Quicksort), es un método mejorado basado en
+el principio de intercambio y se le considera como uno de los mejores métodos para ordenar arreglos.
+El método Quicksort se basa en el hecho de que los intercambios deben realizarse preferentemente
+sobre distancias largas para que sea más efectivo.
+El método consiste en tomar arbitrariamente un elemento X, conocido como pivote; se inspecciona el
+arreglo de izquierda a derecha hasta encontrar el ítem a[i]>= X. Entonces se inspecciona el arreglo de
+derecha a izquierda hasta encontrar el elemento a[j]<=X. A continuación se intercambian los dos ítems
+y se continúa este proceso de inspección e intercambio hasta que los recorridos en ambas direcciones
+se encuentren en algún punto situado aproximadamente a la mitad del arreglo.
+Como resultado se obtiene el arreglo partido en dos; la parte izquierda contendrá a las claves menores
+que el pivote X y la parte derecha contendrá las claves mayores.
+Después de hacer la partición se aplica el mismo proceso a cada una de las partes y a continuación a
+las partes resultantes, así sucesivamente, hasta que cada partición contenga un único ítem.

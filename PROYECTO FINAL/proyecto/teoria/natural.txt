@@ -1,0 +1,7 @@
+Mezcla Natural
+El método de ordenación de mezcla natural, conocido también como equilibrada, es una
+optimización del método de mezcla directa y consiste en realizar particiones tomando
+secuencias ordenadas de máxima longitud en lugar de secuencias de tamaño fijo previamente
+determinadas. Luego se realiza la fusión de las secuencias ordenadas, en alternancia, sobre
+dos archivos. Aplicando estas acciones en forma repetida se logrará que el archivo original
+quede ordenado. 

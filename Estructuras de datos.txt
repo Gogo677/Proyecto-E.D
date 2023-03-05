@@ -1,0 +1,31 @@
+3 Estructuras de datos lineales y no lineales
+
+3.1 Pilas
+3.1.1 Definición y representación
+3.1.2 Operaciones de inserción y extracción
+3.1.3 Implementación dinámica con diferentes tipos de datos
+3.1.4 Implementación con arreglos de diferentes tipos de datos
+3.1.5 Notación infija, prefija y postfija.
+
+3.2 Cola
+3.2.1 Definición y representación
+3.2.2 Operaciones de inserción y extracción
+3.2.3 Implementación dinámica con diferentes tipos de datos
+3.2.4 Implementación con arreglos de diferentes tipos de datos
+3.2.5 Cola circular, doblemente ligada y de prioridad
+
+3.3Listas
+3.3.1 Definición y representación
+3.3.2 Operaciones de inserción y extracción
+3.3.3 Implementación dinámica con diferentes tipos de datos
+3.3.4 Implementación con arreglos de diferentes tipos de datos
+3.3.5 Ligadas, doblemente ligadas, circulares y ordenadas
+
+3.4 Árboles
+3.4.1 Definición y representación
+3.4.2 Clasificación, operaciones de inserción, extracción, búsqueda y recorrido
+3.4.2.1 Árboles Binarios
+3.4.2.2 Árboles AVL
+3.4.2.3 Árboles B
+3.4.3 Implementación de árboles con diferentes tipos de datos
+3.4.4 Bosques 

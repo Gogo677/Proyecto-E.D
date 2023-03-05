@@ -1,0 +1,110 @@
+---------------------------------------------------Ordenación de Arreglos---------------------------
+Existen diversos algoritmos para el ordenamiento de datos, algunas son sofisticadas y pueden obtener
+ganancias en el rendimiento, otras son más sencillas, pero no son tan óptimas.
+La influencia de la estructura de datos en la elección de un algoritmo es muy importante para los
+problemas de ordenación. Los métodos se dividen en dos categorías:
+? Ordenación de arreglos
+? Ordenación de ficheros secuenciales.
+Ambas clases se denominan a menudo como ordenación interna y externa, ya que los arreglos se
+almacenan en la memoria interna rápida de acceso aleatorio y los ficheros y archivos se colocan en
+dispositivos externos mecánicos como discos, USB’s, cintas, etc.
+Un método de ordenación se denomina estable si el orden relativo de los artículos con la
+misma clave no se altera por el proceso de ordenación.
+
+--> Ordenación por inserción directa <--
+El método consiste en que cada paso, comenzando con i= 1, e incrementado a i de uno en uno, se
+toma el elemento i de la secuencia origen y se transfiere a la secuencia destino insertándolo en el sitio
+apropiado, manteniendo los i-1…0 elementos ordenados. El número de comparaciones y movimientos mínimos 
+se presenta cuando los ítems están ordenados de origen y el máximo se presenta si están inicialmente en 
+orden inverso. En este caso se dice que el método se comporta realmente natural.
+El Método de Inserción Directa se puede mejorar, es decir, se observa que la secuencia destino a1, …a
+i-1 en la que se debe insertar el nuevo artículo ya está ordenada, en ese caso puede utilizarse la
+búsqueda binaria para encontrar de manera más rápida el lugar de inserción. 
+
+--> Ordenación por inserción binaria <--
+El método de búsqueda binaria arranca del elemento central de la secuencia destino y continúa por 
+bisección hasta encontrar el punto de intersección.Observar que el número de comparaciones es independiente 
+del orden inicial de los ítems. Sin embargo, debido a que la división utilizada en la etapa de bisección 
+trunca el resultado, el número real de comparaciones necesarias con i ítems puede aumentar en una sobre las 
+esperadas. Esta circunstancia hace que las posiciones inferiores de inserción se localicen ligeramente más 
+rápido que las superiores. Esto favorece a los casos en que los ítems están inicialmente muy desordenados.
+Esto es, se necesita el mínimo de comparaciones cuando los artículos están es orden inverso inicialmente y
+el máximo cuando ya están ordenados. A esto se le llama comportamiento antinatural.
+
+--> Ordenación por selección natural <--
+1. Seleccionar el artículo con clave mínima
+2. Intercambiar con el primero
+3. Repetir los pasos 1 y 2
+Observar que el número C de comparaciones entre claves es independiente de la ordenación inicial de
+estas. En este aspecto puede decirse que este método se comporta de forma menos natural que el de
+inserción directa. El algoritmo de selección directa es preferible al de inserción directa, aunque en los 
+casos en que las claves están ordenadas o casi ordenadas este último puede ser más rápido.
+
+--> Ordenación por intercambio de burbuja <--
+A este método se le conoce como método de la burbuja y consiste en hacer repetidas pasadas
+sobre el arreglo, moviendo en cada una el elemento de clave mínima hasta el extremo
+izquierdo del arreglo.Una técnica para mejorar este algoritmo, es controlar si se ha producido algún cambio 
+en una pasada. Por lo tanto, es necesario agregar una pasada sin operaciones de un intercambio para
+determinar que el algoritmo puede acabar. Esta simetría antinatural surgiere otra mejora: la alternancia en 
+la dirección de dos pasadas consecutivas. El método resultante se denomina “Método de la Sacudida”.
+La ordenación por intercambio incluidas sus leves mejoras, es inferior a la ordenación por selección o por 
+inserción. Este método, tiene escasas razones que los hagan recomendable. El método de la sacudida se 
+utiliza con ventaja en los casos en que se sabe que los artículos están casi ordenados, lo que es raro en 
+la práctica.
+
+--> Ordenación por inserción con incrementos decrecientes <--
+Este método también es conocido como método de Shell y consiste en primer lugar, en agrupar y
+ordenar por separado, los ítems que distan 4 posiciones. Este proceso se denomina ordenación de
+cuatro en cuatro. Después se agrupan y ordenan los ítems que distan dos posiciones. Este proceso se
+denomina ordenación de dos en dos. Finalmente, en la tercera pasada se ordenan los ítems de
+manera normal, es decir, de uno en uno.
+Al final el método produce como resultado un arreglo ordenado y cada pasada se beneficia de las
+anteriores. Cualquier secuencia de incrementos es aceptable siempre que la última sea de uno en
+uno, porque en el peor de los casos, la última pasada realizaría toda la ordenación. Sin embargo, no
+es tan evidente que el método de incrementos decrecientes produzca resultados mejores con incrementos 
+distintos a potencias de 2. Cada ordenación de h en h se programa como un proceso de inserción directa 
+empleando la técnica.
+
+--> Ordenación según árbol <--
+También es conocido como Heapsort, su desempeño es en promedio tan bueno como el Quicksort y
+se comporta mejor que este último en los peores casos. El Heapsort fue desarrollado en 1964 por J.
+W. J. Williams.
+El Heapsort está basado en el uso de un tipo especial de árbol binario (llamado apilamiento) para
+estructurar el proceso de ordenamiento. La estructura de ramificación del árbol conserva el número de
+comparaciones necesarias en O(n log2 n).
+La estructura de este árbol tiene las siguientes características:
+Las llaves están acomodadas en los nodos de tal manera que, para cada nodo i,
+Ki <= Kj donde el nodo j es el padre del nodo i. Es decir, al recorrer el camino desde la raíz hacia
+abajo, las claves se encuentran en orden descendente.
+El árbol se llena de izquierda a derecha, lo que implica que si algún nodo no está en el mismo nivel
+que el resto, éste estará entonces lo más a la izquierda posible del árbol.
+Resumiendo, el ordenamiento por Heapsort realiza los siguientes pasos desde un punto de vista de un
+Heap (con los elementos) y una lista ordenada (inicialmente vacía):
+1º. Sacar el valor máximo del Heap. (El de la posición 1).
+2º. Poner el valor sacado en el arreglo ordenado.
+3º. Reconstruir el Heap con un elemento menos.
+El proceso de sacar el máximo (la raíz) lleva en sí una serie de pasos más que son:
+1. Tomar el elemento de la raíz y lo intercambia con el elemento más a la derecha de la rama que
+esté en el nivel más bajo. Recordemos que el árbol (Heap) se llena de izquierda a derecha, con
+lo cual, el proceso de sacar la raíz se hace en forma inversa (Vaciando el árbol).
+2. Al intercambiar la raíz con el elemento antes mencionado, se produce un quiebre en las
+condiciones del Heap, con lo cual se debe reconstruir y volver a dejar en la raíz del árbol el
+elemento que es mayor que todos los demás.
+
+--> Ordenación por partición <--
+Este método también es conocido como método rápido (Quicksort), es un método mejorado basado en
+el principio de intercambio y se le considera como uno de los mejores métodos para ordenar arreglos.
+El método Quicksort se basa en el hecho de que los intercambios deben realizarse preferentemente
+sobre distancias largas para que sea más efectivo. El método consiste en tomar arbitrariamente un 
+elemento X, conocido como pivote; se inspecciona el arreglo de izquierda a derecha hasta encontrar 
+el ítem a[i]>= X. Entonces se inspecciona el arreglo de derecha a izquierda hasta encontrar el 
+elemento a[j]<=X. A continuación se intercambian los dos ítems y se continúa este proceso de 
+inspección e intercambio hasta que los recorridos en ambas direcciones se encuentren en algún punto 
+situado aproximadamente a la mitad del arreglo. Como resultado se obtiene el arreglo partido en 
+dos; la parte izquierda contendrá a las claves menoresque el pivote X y la parte derecha contendrá 
+las claves mayores. Después de hacer la partición se aplica el mismo proceso a cada una de las partes 
+y a continuación a las partes resultantes, así sucesivamente, hasta que cada partición contenga un 
+único ítem.
+
+del centinela para la condición de terminación en la búsqueda de la posición de inserción.
+

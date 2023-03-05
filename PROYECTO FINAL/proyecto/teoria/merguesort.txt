@@ -1,0 +1,14 @@
+Método de mezcla directa
+Los algoritmos de ordenación presentados anteriormente son inaplicables si la cantidad de
+datos a ordenar no cabe en la memoria principal y se encuentra almacenada en algún
+dispositivo periférico de almacenamiento, como un disco duro, una cinta, etc. En este caso se
+describen los datos en forma de archivo o fichero secuencial cuya característica es que a cada
+momento uno, y solo uno de los componentes, es accesible directamente.
+El método de mezcla directa consiste en
+1. Se divide la secuencia a en la mitad, a cada una de las partes se le llama b y c.
+2. Se mezclan b y c combinando ítems aislados para forma pares ordenados.
+3. La secuencia resultante de la mezcla se denomina a, y se repiten los pasos 1 y 2, esta vez
+mezclando los pares ordenados para formar cuádruplos ordenados.
+4. Se repiten los pasos anteriores, fusionando los cuádruplos ordenados para tomar óctuplos
+ordenados, y se continúa haciendo esto, dublicando el tamaño de la subsecuencia
+mezclada, hasta que la secuencia total queda ordenada

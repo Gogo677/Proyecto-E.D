@@ -1,0 +1,10 @@
+Una pila es una estructura en la que los elementos o ítems al 
+entrar se colocan sobre los que ingresaron previamente, por esta 
+razón también se le conoce como LIFO, del inglés Last In First Out,
+que significaúltimo en entrar primero en salir. Este comportamiento
+ es similar a una pila de platos en una mesa, el
+último plato que entró será el primero en salir, así sucesivamente hasta que el primer plato que se puso en
+la mesa es el último en ser utilizado.
+La aplicación del concepto de pilas puede encontrarse en el análisis sintáctico de compiladores e
+intérpretes, en los procesos recursivos, en el comando “deshacer los últimos cambios (Ctrl+z)”,
+implementado en algunas aplicaciones como Word, Excel, etc.

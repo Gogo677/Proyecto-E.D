@@ -1,0 +1,20 @@
+﻿		Cola circular, doblemente ligada y de prioridad
+Una cola circular o anillo es una estructura de datos en la que los elementos están de forma circular y cada elemento 
+tiene un sucesor y un predecesor. Los elementos pueden consultarse, añadirse y eliminarse únicamente desde la 
+cabeza del anillo. Existen dos operaciones de rotaciones, una en cada sentido, de manera que la cabeza del anillo 
+pasa a ser el elemento sucesor, o el predecesor, respectivamente, de la cabeza actual. Ver figura 3.14, ver que el 
+último ítem se conecta con el primero. En el ejemplo, entra primero el 10, luego 4, 20, 34. Tener cuidado de 
+actualizar los punteros de los nodos extremos en cada inserción y eliminación.
+La bicola es un tipo de estructura de datos que permiten la inserción y eliminación de ítems por ambos extremos de la 
+cola.Se puede implementar con un vector y dos índices, uno que apunta al inicio y otro al final; otra forma es con una 
+lista doblemente enlazada circular similar a la figura 3.15. En la cola doblemente ligada se consideran nodos que 
+incluyen dos punteros uno que apuntará al nodo antecedente y otro al consecuente, con respecto a los nodos extremos, 
+el primero apunta al final y el final apunta al primero. Se debe tener cuidado de actualizar todos los punteros 
+relacionados con los nodos extremos.
+Por otra parte, una cola de prioridades es un tipo de dato abstracto similar a una cola en la que los elementos tienen 
+adicionalmente, una prioridad asignada. En una cola de prioridades un elemento con mayor prioridad será desencolado 
+antes que un elemento de menor prioridad. Si dos elementos tienen la misma prioridad, se desencolarán siguiendo el 
+orden de cola. Una cola de prioridad ha de soportar al menos las siguientes dos operaciones: 
+• Añadir con prioridad: se añade un elemento a la cola, con su correspondiente prioridad. 
+• Eliminar elemento de mayor prioridad: se devuelve y elimina el elemento con mayor prioridad más antiguo que no haya 
+sido desencolado.

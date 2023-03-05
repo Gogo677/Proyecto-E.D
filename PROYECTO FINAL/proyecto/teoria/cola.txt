@@ -1,0 +1,39 @@
+﻿				Colas
+  Definición y representación.
+Una cola o fila es una estructura de datos con la restricción de que el primero en llegar es el primero en salir, 
+en algunas bibliografías le refieren como FIFO por las iniciales del inglés First in First out. 
+Al agregar un ítem a la cola, éste debe formarse atrás de todos los elementos que previamente se insertaron.
+Operaciones de inserción y extracción
+
+Inicio: Cola vacía, Cantidad=0, Máximo = N. En donde Cantidad es el número de datos formados en la Fila, 
+y Máximo es la capacidad máxima y N es el máximo de ítems.
+
+Paso1: Verificar si Cantidad < Máximo. En caso afirmativo ir al paso 2. En caso negativo reportar que “Cola llena” e ir 
+al Paso 5.
+Paso2: Si Cola vacía, el elemento se ubica al inicio e ir al paso 4. 
+Paso3: Si existen datos en la Cola, buscar el último y después de él se coloca el nuevo ítem. 
+Paso4: Incrementar Cantidad en una unidad. 
+Paso5: Fin del proceso.
+
+Inicio: Cola existente y Cantidad inicializada con el número de datos en la Cola. 
+Paso 1: Si la Cola está vacía, ir al paso 4.
+Paso 2: Extraer el ítem ubicado al principio de la Cola. 
+Paso 3: Disminuir Cantidad en una unidad. 
+Paso 4. Fin del proceso.
+
+Implementación dinámica con diferentes tipos de datos
+Una cola dinámica es una lista enlazada, para implementarla se pueden utilizar punteros, 
+en ese caso se toma memoria del montículo para cada ítem que se inserta, el límite de la Cola lo marca el límite 
+dado por el programador o la memoria disponible que se encuentre en la máquina. Las figuras 3.10 y 3.11 muestran 
+la inserción y extracción en Cola de enteros
+
+Implementación con arreglos de diferentes tipos de datos.
+Para implementar una cola se puede utilizar un arreglo unidimensional de celdas contiguas, 
+en donde se establece previamente el tamaño máximo, ver Figura 3.13, el índice Primero indica 
+cuál es el primer ítem que entro y Último indica el último, en este caso, ingresa -5, 12, 8, 16. 
+Al extraer, sale el ítem apuntado por Primero, luego Primero apuntará al ítem inmediato posterior al eliminado. 
+Se siguen insertando datos hasta alcanzar el tamaño máximo del arreglo, en ese caso se recorren los ítems 
+existentes hasta el inicio del arreglo, ocupando los espacios que habían quedado vacíos. 
+Para insertar un ítem se insertará una posición después de donde apunta Último, a hora último apuntará al dato 
+ingresado. En este caso el tipo de dato es entero sin embargo al definir el tipo del arreglo se pueden elegir 
+tipos de datos normalizados o definidos por el programador.

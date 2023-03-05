@@ -1,0 +1,6 @@
+Ordenación por Selección Directa
+
+Este método se basa en los siguientes principios:
+1. Seleccionar el artículo con clave mínima
+2. Intercambiar con el primero
+3. Repetir los pasos 1 y 2

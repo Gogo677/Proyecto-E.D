@@ -1,0 +1,9 @@
+ Método de Inserción Binaria
+Siendo este una mejora del método de insercion directa podemos 
+observar que el número de comparaciones es independiente del orden inicial de los ítems. Sin
+embargo, debido a que la división utilizada en la etapa de bisección trunca el resultado, el número real
+de comparaciones necesarias con i ítems puede aumentar en una sobre las esperadas. Esta
+circunstancia hace que las posiciones inferiores de inserción se localicen ligeramente más rápido que
+las superiores. Esto favorece a los casos en que los ítems están inicialmente muy desordenados. Esto
+es, se necesita el mínimo de comparaciones cuando los artículos están es orden inverso inicialmente y
+el máximo cuando ya están ordenados. A esto se le llama comportamiento antinatural. 

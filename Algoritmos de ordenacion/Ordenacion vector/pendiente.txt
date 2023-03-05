@@ -1,0 +1,4 @@
+codigos de ordenacion:
+-meter teoria para cada uno
+-hacer su codigo (pasar el archivo de numeros aleatorios a la carpeta de teoria)
+-todos se basan en el de inserción, solo se cambia la función

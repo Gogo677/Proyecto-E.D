@@ -1,0 +1,53 @@
+﻿				Listas
+
+Las listas son estructuras lineales en seguida se describirán
+
+Definición y representación
+
+Las listas son estructuras de datos lineales, que pueden ser representadas con arreglos o con punteros de 
+manera dinámica. Las pilas y colas se consideran como subtipos de listas.
+ 
+Se hará una clasificación de listas ligadas: 
+• Listas ligadas simples ordenadas. 
+• Listas ligadas ordenadas circulares. 
+• Listas doblemente ligadas ordenadas simples.
+ • Listas doblemente ligadas ordenadas circulares
+
+Operaciones de inserción y extracción en lista simple ordenada
+
+Las operaciones de inserción y extracción se muestran respectivamente. En una lista ordenada, primero se debe 
+realizar la búsqueda del ítem a insertar de tal manera que si existe ya no se agrega, en el caso de no existir 
+durante la búsqueda se detecta el lugar donde debe insertarse, puede ser al principio, en medio o al final 
+de la lista. Para eliminar, primero se verifica si la lista es vacía, en este caso no se hace ningún movimiento. 
+En caso contrario, se busca el ítem si no está se reporta la no existencia, pero si está se elimina. La eliminación 
+del ítem puede realizarse al inicio, en la parte intermedia o al final de la lista.
+Cada vez que se inserta un nuevo elemento a la lista se toma memoria de manera dinámica y se enlaza a la lista en la 
+ubicación correcta. La eliminación también se puede ver en la misma figura. Los nodos que conforman a la lista no se 
+almacenan de manera contigua, esto trae como consecuencia dedicar esfuerzos, en el diseño de las funciones de 
+inserción y borrado de nodos para no dejarlos desenlazados, si esto sucediera no habría forma de regresar al nodo 
+y liberar la memoria ocupada por el mismo. Las listas ligadas pueden ser ordenadas simples, circulares, doblemente 
+ligadas y doblemente ligadas circulares.
+Implementación con arreglos de diferentes tipos de datos 
+Un arreglo tipo lista se define como una variable que permite almacenar de manera contigua un conjunto de datos del 
+mismo tipo, organizados en una sola columna y uno o más renglones. También reciben el nombre de vectores en 
+álgebra o arreglos unidimensionales en programación. El primer índice de un arreglo es cero. Los procesos normales 
+con una lista incluyen declarar la lista, capturar sus elementos, desplegarlos, realizar operaciones, etc.
+
+Listas ligadas, doblemente ligadas, circulares y ordenadas
+La representación de una lista ligada, hay un puntero inicio que apunta al principio de la lista, además, cada nodo 
+conoce quien esta adelante, pero no puede regresar al anterior, lo que indica que el recorrido es en un solo sentido. 
+El último de la lista apunta a NULL. Las listas ligadas doblemente ligadas tienen la característica en que cada nodo 
+tiene dos punteros, una apuntará al nodo de enfrente y el segundo apuntará al nodo de atrás, esto permitirá recorrer 
+la lista en ambos sentidos. El último nodo apunta a NULL. La lista ligada simple circular el último nodo apunta al 
+primero. En las listas doblemente ligadas circulares el primer elemento de la lista apunta al último y el nodo último 
+apunta al primero. En las listas ligadas ordenadas los ítems son insertados manteniendo un orden posiblemente 
+ascendente o descendente.Las estructuras dinámicas lineales de datos presentan ventajas de flexibilidad sobre las 
+estructuras estáticas, sin embargo, tienen un punto débil: son listas secuenciales, es decir están dispuestas de modo
+que es necesario moverse a través de ellas una posición cada vez, debido a que cada elemento tiene un siguiente 
+elemento. Esta linealidad es típica de elementos que pertenecen a una sola dimensión. Los árboles son estructuras 
+de datos no lineales más complejas que resuelven el problema que plantean las listas lineales y en las que cada 
+elemento puede tener conexión o bifurcación con más de un elemento. Estos tipos de datos son las gráficas (o grafos) 
+y los árboles. En seguida se tratarán los árboles.
+
+
+

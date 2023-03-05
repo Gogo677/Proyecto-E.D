@@ -1,0 +1,11 @@
+Inserción directa
+Inserción Binaria
+Selección directa
+Intercambio Directo
+Metodo de Sacudida
+Metodo de Shell
+Ordenación segun árbol
+Ordenación por partición
+
+Mezcla directa
+Mezcla natural

@@ -1,0 +1,4 @@
+Ordenación por inserción directa
+El método consiste en que cada paso, comenzando con i= 1, e incrementado a i de uno en uno, se
+toma el elemento i de la secuencia origen y se transfiere a la secuencia destino insertándolo en el sitio
+apropiado, manteniendo los i-1…0 elementos ordenados

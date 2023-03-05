@@ -1,0 +1,12 @@
+Método de la Sacudida
+Una técnica para mejorar el algoritmo de la burbuja, es controlar si se ha producido algún cambio en una
+pasada. Por lo tanto, es necesario agregar una pasada sin operaciones de un intercambio para
+determinar que el algoritmo puede acabar. Esto para evitar realizar pasadas que no tienen
+ningún defecto, por lo tanto, el arreglo:
+[12, 18, 42, 44, 55, 67, 94, 06]
+Sería ordenado por el método de la burbuja mejorado en una única pasada, en cambio el
+arreglo:
+[94, 06, 12, 18, 42, 44, 55, 67]
+Necesita 7 pasadas.
+Esta simetría antinatural surgiere otra mejora: la alternancia en la dirección de dos pasadas
+consecutivas. El método resultante se denomina “Método de la Sacudida”.

@@ -1,0 +1,11 @@
+Ordenación por inserción con incrementos decrecientes 
+Este método también es conocido como método de Shell y consiste en primer lugar, en agrupar y
+ordenar por separado, los ítems que distan 4 posiciones. Este proceso se denomina ordenación de
+cuatro en cuatro. Después se agrupan y ordenan los ítems que distan dos posiciones. Este proceso se
+denomina ordenación de dos en dos. Finalmente, en la tercera pasada se ordenan los ítems de
+manera normal, es decir, de uno en uno.
+Al final el método produce como resultado un arreglo ordenado y cada pasada se beneficia de las
+anteriores. Cualquier secuencia de incrementos es aceptable siempre que la última sea de uno en
+uno, porque en el peor de los casos, la última pasada realizaría toda la ordenación. Sin embargo, no
+es tan evidente que el método de incrementos decrecientes produzca resultados mejores con
+incrementos distintos a potencias de 2

@@ -1,0 +1,25 @@
+Árboles multicamino (árboles B)
+
+Hasta ahora, el análisis se ha limitado a los árboles en que cada nodo tiene como 
+máximo dos descendientes, es decir, a árboles binarios. 
+Ahora nos concentraremos en los árboles multicamino que son árboles que contienen 
+nodos con varias ramas. Estos árboles se utilizan en la construcción y
+mantenimiento de árboles de búsqueda en gran escala, dónde hay que hacer inserciones y borrados
+de elementos, pero en las que la memoria principal es demasiado costosa o no es suficientemente
+grande para ser utilizada como almacenamiento permanente.
+Las estructuras dinámicas presentadas en este tema son propicias para trabajar con dispositivos de
+memoria secundaria, con la novedad de que los punteros se representan por direcciones del disco,
+en vez de direcciones de la memoria principal. Aunque una desventaja es que la velocidad de acceso
+a disco es más lento que el acceso a memoria principal
+En este subtema se analizarán un cierto tipo de árboles multicamino denominados árboles B. Los
+árboles B tienen las siguientes características:
+
+1) Cada nodo contiene como máximo 2M elementos y como mínimo M elementos, en donde M
+es un número fijo.
+
+2) La otra condición tiene una excepción: el mínimo número de ítems en el nodo raíz es 1. La
+constante M es llamada Orden del árbol B.
+
+3) Todas las páginas hojas se encuentran en el mismo nivel.
+Es importante resaltar que es diferente un árbol B que un Balanceado, simplemente hay que
+recordar que una árbol B es un árbol multicamino

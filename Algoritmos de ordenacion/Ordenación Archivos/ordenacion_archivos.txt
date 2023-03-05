@@ -1,0 +1,76 @@
+------------------------------------------Ordenación de archivos---------------------------------
+Los métodos de ordenación de ficheros o archivos, es conocido también como ordenación externa,
+debido a que los algoritmos están orientados a manejar cantidades grandes de datos. Es decir la
+cantidad es tan grande, que todos los datos no pueden ser almacenados temporalmente a la memoria
+principal (típicamente la memoria RAM) entonces es necesario utilizar un tipo de memoria más lenta
+(típicamente un disco duro o cualquier dispositivo de almacenamiento físico).
+Por ejemplo, suponer que 900 MB de información deben ser ordenados utilizando únicamente 100 MB
+de RAM., en este caso
+1. Se leerán 100MB de información en la memoria principal y se ordenará utilizando un
+algoritmo cualquiera de ordenación.
+2. Se escribe la información ordenada en el disco.
+3. Se repiten los pasos 1 y 2 hasta que toda la información esté ordenada en pedazos de 100
+MB. Ahora se deben mezclar todos los pedazos ordenados.
+4. Léanse los primeros 10MB de cada pedazo ordenado a la memoria principal (total de 90
+MB) y destínense los 10 MB restantes para el buffer de salida.
+5. Se ordenan los nueve pedazos mezclándolos y se graba el resultado en el buffer de salida.
+Si el buffer de salida está lleno, escríbase al archivo destino final. Si cualquiera de los 9
+buffers leídos queda vacío, se llena con los siguientes 10 MB de su pedazo original de 100
+MB o se marca este como completado si ya no hay registros remanentes.
+
+--> Método de mezcla directa <--
+Los algoritmos de ordenación presentados anteriormente son inaplicables si la cantidad de
+datos a ordenar no cabe en la memoria principal y se encuentra almacenada en algún
+dispositivo periférico de almacenamiento, como un disco duro, una cinta, etc. En este caso se
+describen los datos en forma de archivo o fichero secuencial cuya característica es que a cada
+momento uno, y solo uno de los componentes, es accesible directamente.
+El método de mezcla directa consiste en
+1. Se divide la secuencia a en la mitad, a cada una de las partes se le llama b y c.
+2. Se mezclan b y c combinando ítems aislados para forma pares ordenados.
+3. La secuencia resultante de la mezcla se denomina a, y se repiten los pasos 1 y 2, esta vez
+mezclando los pares ordenados para formar cuádruplos ordenados.
+4. Se repiten los pasos anteriores, fusionando los cuádruplos ordenados para tomar óctuplos
+ordenados, y se continúa haciendo esto, dublicando el tamaño de la subsecuencia
+mezclada, hasta que la secuencia total queda ordenada.
+
+--> Método de Mezcla Natural <--
+El método de ordenación de mezcla natural, conocido también como equilibrada, es una
+optimización del método de mezcla directa y consiste en realizar particiones tomando
+secuencias ordenadas de máxima longitud en lugar de secuencias de tamaño fijo previamente
+determinadas. Luego se realiza la fusión de las secuencias ordenadas, en alternancia, sobre
+dos archivos. Aplicando estas acciones en forma repetida se logrará que el archivo original
+quede ordenado.
+Este método mezcla tramos de longitud variable en lugar de secuencias de tamaño fijo,
+predeterminado. Los tramos tienen la propiedad de que si dos secuencias de n tramos se
+mezclan se produce una secuencia de n tramos exactamente. Por ello, el número total de
+tramos se divide por 2 en cada pasada y el número de movimientos necesarios de ítems en el
+caso más desfavorable es ?? [??????2 ??], pero en el caso medio es aún menor.
+
+--> Método de Mezcla Equlibrada Múltiple <--
+Este método requiere que en cada pasada haya un número igual de ficheros de entrada y
+salida, sobre los que se distribuyan alternativamente los tramos consecutivos utilizando 
+Nficheros o archivos, el algoritmo será por lo tanto una mezcla de ??2/ –uplas, suponiendo 
+que N es par. Lo que se logra con este método es eliminar las operaciones de copia necesarias 
+cuando las operaciones de distribución y mezcla están juntas en una fase única. La mezcla de 
+tramos equitativamente distribuidas en N-cintas produce una sucesión ????/tramos. Una segunda 
+pasada reduce su número a ??/???? una tercera pasada disminuiría a??/???? y después de k pasadas, 
+quedaría ??/???? tramos. El número total de pasadas necesarias para ordenar n artículos o ítems 
+mediante mezcla Nuplas es: ?? = ???????? ?? y el número de movimientos es: ?? = ?? [???????? ??].
+
+--> Método Polifásico <--
+Este método fue inventado por R. L. Gillstad. La idea básica de este método es aplicar una estrategia
+mezclar hasta vaciar el archivo, utilizando archivos auxiliares para almacenar el resultado parcial.
+Durante la ejecución, el archivo de entrada y alguno de salida intercambian papeles y siempre se tiene
+alguno vacío y se ilustra en un ejemplo que utiliza tres cintas. En todo momento los ítems se mezclan
+desde dos cintas sobre una tercera. Cada vez que una cinta origen llega a su final se convierte
+inmediatamente en la cinta destino de las operaciones de mezcla desde la cinta aún no terminada y la
+cinta que previamente era de destino. . El algoritmo es el siguiente:
+Fase 1: mientras existan datos en T0 (entrada), los pasos a seguir son:
+1. Leer m ítems
+2. Ordenar los ítems por método interno.
+3. Si los m ítems anteriores se colocaron en T2, colocar éstas en T3, si no, colocarlas en T2.
+Fase 2: mientras exista más de un arreglo, los pasos a seguir son:
+1. Intercalar el primer bloque en T2 con el primer bloque en T3 y dejar el resultado en T0.
+2. Intercalar los siguientes arreglos en T2 y T3 y dejar el resultado en T1.
+3. Repetir los pasos 1 y 2, colocar los resultados alternativamente en T0 y T1 hasta que los
+datos en T2 y T3 se agoten.
